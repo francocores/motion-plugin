@@ -1,10 +1,9 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { DeviceMotionPlugin } from './definitions';
+import type { DeviceMotionPlugin, WatchShakeCallback } from './definitions';
 
 export class DeviceMotionWeb extends WebPlugin implements DeviceMotionPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
-  }
+    watchDeviceShake(callback: WatchShakeCallback): Promise<string> {
+        throw new Error('Method not implemented.');
+    }
 }

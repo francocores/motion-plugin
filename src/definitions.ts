@@ -1,3 +1,12 @@
+export type CallbackID = string;
+
 export interface DeviceMotionPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  watchDeviceShake(
+    callback: WatchShakeCallback,
+  ): Promise<CallbackID>;
 }
+
+export type WatchShakeCallback = (
+  shaked: boolean | null,
+  err?: any,
+) => void;
